@@ -2,13 +2,14 @@ from phonenumbers import carrier
 from flask import Flask, request
 import phonenumbers
 
-app = Flask(_name_)
+app = Flask(__name__)
 
 @app.route('/phonenumber_carrier', methods=['POST'])
 def get_phonenumber_carrier():
+    request_data = request.get_json()
     # Get the phone number from the request
-    phone_number = request.form['phone_number']
-    
+    phone_number = request_data['phone_number']
+
     # Parse the phone number using the phonenumbers library
     parsed_number = phonenumbers.parse(phone_number)
     
@@ -18,5 +19,7 @@ def get_phonenumber_carrier():
     # Return the carrier name
     return carrier_name
 
-if _name_ == '_main_':
+if __name__ == '_main_':
     app.run()
+
+

@@ -12,8 +12,15 @@ This is Flask api that recieves post requests with phone number as input and sen
 
 ## Usage 
 
+- Install the packages below 
+
 ```$ pip install phonenumbers```
 
 ```$ pip install -U Flask```
 
-You can bridge this with your app locally on your hosting or you can push it to python anywhere and use it as a service calling the api.
+- Run the project 
+
+```$ flask run ```
+
+
+#### You can host it with your code or use pythonanywhere and call it from there. 
